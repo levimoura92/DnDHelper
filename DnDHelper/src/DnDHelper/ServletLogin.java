@@ -1,6 +1,7 @@
 package DnDHelper;
 
 import java.io.IOException;
+import DnDHelper.UserDnD;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -43,10 +44,12 @@ public class ServletLogin extends HttpServlet {
 		String sUser = request.getParameter("user");
 		String sPwd = request.getParameter("pwd");
 //		System.out.println(sUser+" "+sPwd);
-		int cod = SQLUtils.getUser(sUser, sPwd);
-		System.out.println(Integer.toString(cod));
+		UserDnD loggedUser = new UserDnD();
+		loggedUser = SQLUtils.getUser(sUser, sPwd);
+		
+//		System.out.println(Integer.toString(cod));
 		HttpSession session = request.getSession();
-		session.setAttribute("cod", cod);
+		session.setAttribute("cod", loggedUser.getCod());
 		response.sendRedirect(request.getContextPath()+ "/main.jsp");
 	}
 

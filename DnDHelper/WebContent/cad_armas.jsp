@@ -9,7 +9,17 @@
 <body>
 	<div id='container' class='container'>
 		<div id='formCadArmas' class='formCadArmas'>
-			
+			<form method="post" align="center" action='<%=request.getContextPath()%>/CadastraArmas'>
+				<label>Nome da Arma: </label><br>
+				<input type="text" name='wpnName'  class='somente-numero'/><br>
+				<label>Tipo de Dado: </label><br>
+				<input type="number" name='wpnDice' class='somente-numero'/><br>
+				<label>Numero de Dados: </label><br>
+				<input type="number" name='wpnNumDice' class='somente-numero'/><br>
+				<label>Efeito da arma: </label><br>
+				<input type="text" name='wpnEffect' class='somente-numero'/><br>
+				<input type="submit">
+			</form>
 		</div>
 	</div>
 

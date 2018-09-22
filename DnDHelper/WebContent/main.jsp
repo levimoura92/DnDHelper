@@ -10,6 +10,7 @@
 <body>
 	<div id='body' class='body'>
 		<div id='linksPrincipais' class='linksPrincipais' align='center'>
+<%-- 			<%= session.getAttribute("cod")%> --%>
 			<a href='cad_armas.jsp'>cadastro de armas</a><br>
 			<a href='cad_magias.jsp'>cadastro de magias</a><br>
 			<a href='cad_players.jsp'>cadastro de players</a><br>
