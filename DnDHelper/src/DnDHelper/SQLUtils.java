@@ -27,7 +27,7 @@ public class SQLUtils {
 			while(rs.next()) {
 				userDnD.setCod(rs.getInt(1));
 				userDnD.setNome(rs.getString(2));
-				userDnD.setCampanha(rs.getInt(3));
+				userDnD.setCampanha(rs.getInt(4));
 				System.out.println(userDnD.getNome());
 				conn.close();
 
@@ -70,5 +70,12 @@ public class SQLUtils {
 		}catch(Exception e){
 	 		System.out.println(e.getMessage());
 		}		
+	}
+	
+	public static void cadastraCampanhas(String campNome, int uCod) {
+		String qInsert = "INSERT INTO tb_campaign (camp_name, camp_dm) values ('"+campNome+"', '"+uCod+"')";
+		System.out.println(qInsert);
+		String qSelect = "SELECT * FROM tb_campaign WHERE camp_dm = '"+uCod+"'";
+		System.out.println(qSelect);
 	}
 }
