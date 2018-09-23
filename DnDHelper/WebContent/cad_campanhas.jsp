@@ -10,10 +10,12 @@
 <%
 	UserDnD user = new UserDnD();
 	user = (UserDnD)session.getAttribute("user");
-	
 %>
 </head>
 <body>
+	<%
+	if(user != null){
+	%>
 	<div id='container' class='container'>
 		<div id='form-campanha' class='form-campanha'>
 			<form action='<%=request.getContextPath()%>/CadastrarCampanhas' method="post">
@@ -24,5 +26,16 @@
 			</form>
 		</div>
 	</div>
+	<%
+	}else{
+	%>
+	<div id='container' class='container'>
+		<div id='redirect' class='redirect' align="center">
+			<a href='<%=request.getContextPath()%>'>Please Log In</a>
+		</div>
+	</div>
+	<%
+	}	%>
+	
 </body>
 </html>
